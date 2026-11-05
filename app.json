@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "ngn-crm",
+    "slug": "ngn-crm",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.ngncrm.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.ngncrm.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "scheme": "ngncrm",
+    "extra": {
+      "router": {
+        "root": "src/app"
+      }
+    },
+    "plugins": [
+      "@ng-native/metro"
+    ]
+  }
+}
