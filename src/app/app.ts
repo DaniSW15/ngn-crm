@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { Pressable, SafeAreaProvider, SafeAreaView, Text, View } from '@ng-native/components';
 import { StatusBar } from '@ng-native/device';
@@ -74,9 +75,18 @@ import { StatusBar } from '@ng-native/device';
 export class App {
   protected readonly count = signal(0);
 
+  private readonly http = inject(HttpClient);
+
   constructor() {
     // Dark status bar icons in light mode and light ones in dark mode. Unclaimed, Android keeps
     // light icons whatever the scheme.
     inject(StatusBar).set({ style: 'auto' });
+    this.getData();
+  }
+
+  getData() {
+    this.http.get('https://dummyjson.com/products').subscribe((data: any) => {
+      console.log(data.products[0]);
+    });
   }
 }
